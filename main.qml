@@ -18,6 +18,16 @@ ApplicationWindow {
     visible: true
     //visibility: Window.FullScreen
 
+    Connections {
+        target: systray
+        onSystrayClicked: {
+            if (mainwindow.visible) {
+                mainwindow.hide();
+            } else {
+                mainwindow.show();
+            }
+        }
+    }
 
     Item {
         y: 0

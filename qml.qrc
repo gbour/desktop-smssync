@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>resources/jdoe-mini.png</file>
+        <file>resources/smssync-trayicon.png</file>
+        <file>resources/smssync.png</file>
     </qresource>
 </RCC>

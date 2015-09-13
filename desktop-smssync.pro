@@ -3,7 +3,8 @@ TEMPLATE = app
 QT += qml quick widgets
 
 SOURCES += \
-    src/main.cpp
+    src/main.cpp \
+    src/systray.cpp
 
 RESOURCES += qml.qrc
 
@@ -12,5 +13,8 @@ QML_IMPORT_PATH =
 
 # Default rules for deployment.
 include(deployment.pri)
+
+HEADERS += \
+    src/systray.h
 
 
