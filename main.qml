@@ -9,7 +9,7 @@ ApplicationWindow {
 
     title: qsTr("smssync")
     width: 300
-    height: 500
+    height: 200//500
     x: Screen.width - width
     // with awesome DM, Screen.desktopAvailableHeight returns same value as Scree.Height
     // (not including systray size)
@@ -31,15 +31,11 @@ ApplicationWindow {
 
     Item {
         y: 0
-        width: 500
-        height: 850
+        //width: 500
+        //height: 850
         clip: false
         antialiasing: true
         visible: true
-        anchors.leftMargin: 0
-        anchors.topMargin: 0
-        anchors.rightMargin: 0
-        anchors.bottomMargin: 0
         anchors.fill: parent
 
         Image {
@@ -91,5 +87,22 @@ ApplicationWindow {
 
     Component.onCompleted: {
         console.log(Screen.width, Screen.height, Screen.desktopAvailableWidth, Screen.desktopAvailableHeight)
+    }
+
+    Connections {
+        target: netmgr
+        onIncomingMessage: {
+            console.log("incoming msg");
+
+            var _contact = content.contact();
+            username.text    = _contact.name();
+            phonenumber.text = _contact.phoneNumber()
+
+            message.text     = content.content()
+
+            if (!mainwindow.visible) {
+                mainwindow.show();
+            }
+        }
     }
 }

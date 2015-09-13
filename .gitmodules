@@ -1,0 +1,3 @@
+[submodule "src/qmqtt"]
+	path = src/qmqtt
+	url = git@github.com:gbour/qmqtt.git
