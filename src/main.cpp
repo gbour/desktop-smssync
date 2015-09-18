@@ -14,10 +14,11 @@ int main(int argc, char *argv[])
     app.setApplicationName("smssync");
     app.setApplicationVersion("0.1.0");
     app.setOrganizationName("har.bour.cc");
+    app.setWindowIcon(QIcon(":/resources/smssync-trayicon.png"));
 
     QSettings settings("har.bour.cc", "desktop-smssync");
     //QSettings settings("/tmp/desktop-smssync.conf", QSettings::IniFormat);
-    //qDebug() << settings.allKeys();
+    qDebug() << settings.fileName() << settings.allKeys();
 
     // MQTT connection
     //TODO: make it async / in a dedicated thread
