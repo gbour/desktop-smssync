@@ -4,6 +4,7 @@ CONFIG += \
     c++11
 
 QT += qml quick widgets
+DEFINES += QMQTT_LIBRARY
 
 HEADERS += \
     src/network.h \
