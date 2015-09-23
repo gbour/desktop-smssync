@@ -35,9 +35,10 @@ Section "install"
 
   file "smssync.ico"
   file "desktop-smssync.exe"
-  file /r qtlibs\*
 
-  file /r C:\OpenSSL-Win32\*.dll
+  !include "qtlibs.txt"
+
+  file C:\OpenSSL-Win32\*.dll
 
   # create uninstaller
   WriteUninstaller $INSTDIR\uninstall.exe
@@ -73,3 +74,4 @@ Section "Uninstall"
 
   # NOTE: we keep configuration file
 SectionEnd
+
